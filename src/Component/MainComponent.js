@@ -1,5 +1,5 @@
 import React from "react";
-import { AppRegistry, View, Image } from "react-native";
+import { AppRegistry, View, Image, StyleSheet } from "react-native";
 import TopupScreen from "../Screens/Topup/Topup";
 import HistoryScreen from "../Screens/History/History";
 import BalanceScreen from "../Screens/Balance/Balance";
@@ -7,19 +7,17 @@ import PromotionScreen from "../Screens/Promotion/Promotion";
 import { createBottomTabNavigator, createAppContainer } from "react-navigation";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-// const MainComponent = createBottomTabNavigator({
-//   Topup: TopupScreen,
-//   History: HistoryScreen,
-//   Balance: BalanceScreen,
-//   Promotion: PromotionScreen
-// });
-
 const MainComponent = createBottomTabNavigator({
   Topup: {
     screen: TopupScreen,
     navigationOptions: () => ({
       tabBarIcon: ({ tintColor }) => {
-        return <Image source={require("../Public/icon/ic_recharge.png")} />;
+        return (
+          <Image
+            source={require("../Public/icon/ic_recharge.png")}
+            style={{ tintColor: tintColor }}
+          />
+        );
       }
     })
   },
@@ -27,7 +25,12 @@ const MainComponent = createBottomTabNavigator({
     screen: HistoryScreen,
     navigationOptions: () => ({
       tabBarIcon: ({ tintColor }) => {
-        return <Image source={require("../Public/icon/ic_history.png")} />;
+        return (
+          <Image
+            source={require("../Public/icon/ic_history.png")}
+            style={{ tintColor: tintColor }}
+          />
+        );
       }
     })
   },
@@ -38,8 +41,7 @@ const MainComponent = createBottomTabNavigator({
         return (
           <Image
             source={require("../Public/icon/ic_taka.png")}
-            color={tintColor}
-            size={24}
+            style={{ tintColor: tintColor }}
           />
         );
       }
