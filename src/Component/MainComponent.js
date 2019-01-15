@@ -1,4 +1,5 @@
 import React from "react";
+import { AppRegistry, View, Image } from "react-native";
 import TopupScreen from "../Screens/Topup/Topup";
 import HistoryScreen from "../Screens/History/History";
 import BalanceScreen from "../Screens/Balance/Balance";
@@ -17,25 +18,31 @@ const MainComponent = createBottomTabNavigator({
   Topup: {
     screen: TopupScreen,
     navigationOptions: () => ({
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="adjust" color={tintColor} size={24} />
-      )
+      tabBarIcon: ({ tintColor }) => {
+        return <Image source={require("../Public/icon/ic_recharge.png")} />;
+      }
     })
   },
   History: {
     screen: HistoryScreen,
     navigationOptions: () => ({
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="rocket" color={tintColor} size={24} />
-      )
+      tabBarIcon: ({ tintColor }) => {
+        return <Image source={require("../Public/icon/ic_history.png")} />;
+      }
     })
   },
   Balance: {
     screen: BalanceScreen,
     navigationOptions: () => ({
-      tabBarIcon: ({ tintColor }) => (
-        <Icon name="rocket" color={tintColor} size={24} />
-      )
+      tabBarIcon: ({ tintColor }) => {
+        return (
+          <Image
+            source={require("../Public/icon/ic_taka.png")}
+            color={tintColor}
+            size={24}
+          />
+        );
+      }
     })
   },
   Promotion: {
