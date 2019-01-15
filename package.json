@@ -1,9 +1,4 @@
 {
-  "rnpm": {
-    "assets": [
-      "resources/fonts"
-    ]
-  },
   "name": "TopUp",
   "version": "0.0.1",
   "private": true,
