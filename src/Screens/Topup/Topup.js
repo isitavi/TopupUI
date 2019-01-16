@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Text, StyleSheet, View } from "react-native";
 import PrePostRadio from "./Functionality/PrePostRadio";
+import MobileNo from "./Functionality/MobileNo";
 
 export default class Topup extends Component {
   render() {
@@ -8,6 +9,7 @@ export default class Topup extends Component {
       <View style={styles.container}>
         <Text style={styles.testStyle}> Topup </Text>
         <PrePostRadio />
+        <MobileNo />
       </View>
     );
   }

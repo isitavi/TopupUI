@@ -7,23 +7,14 @@ export default class App extends Component {
   state = {
     data: [
       {
-        label: "Default value is same as label"
+        label: "Prepaid",
+        value: "Prepaid",
+        color: "#129dcc"
       },
       {
-        label: "Value is different",
-        value: "I'm not same as label"
-      },
-      {
-        label: "Color",
-        color: "green"
-      },
-      {
-        disabled: true,
-        label: "Disabled"
-      },
-      {
-        label: "Size",
-        size: 32
+        label: "Postpaid",
+        value: "Postpaid",
+        color: "#129dcc"
       }
     ]
   };
@@ -33,14 +24,18 @@ export default class App extends Component {
 
   render() {
     let selectedButton = this.state.data.find(e => e.selected == true);
-    console.log("Check this", selectedButton);
     selectedButton = selectedButton
       ? selectedButton.value
       : this.state.data[0].label;
     return (
       <View style={styles.container}>
-        <Text style={styles.valueText}>Value = {selectedButton}</Text>
-        <RadioGroup radioButtons={this.state.data} onPress={this.onPress} />
+        {/* <Text style={styles.valueText}>Value = {selectedButton}</Text> */}
+
+        <RadioGroup
+          radioButtons={this.state.data}
+          onPress={this.onPress}
+          flexDirection="row"
+        />
       </View>
     );
   }
@@ -49,12 +44,10 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "flex-start",
+    margin: 10,
+    color: "green"
   },
-  valueText: {
-    fontSize: 18,
-    marginBottom: 50
-  }
+  valueText: {}
 });
